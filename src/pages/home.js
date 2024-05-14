@@ -10,6 +10,18 @@ const renderHome = () => {
   title.textContent = "Home";
 
   content.appendChild(title);
+
+  const header = document.createElement("h2");
+  header.classList.add("pageHeader");
+  header.textContent = "Lorem Ipsum";
+
+  content.appendChild(header);
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+  content.appendChild(paragraph);
 };
 
 export { renderHome };
