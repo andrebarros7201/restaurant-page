@@ -29,7 +29,6 @@ button {
 
 #content {
   display: flex;
-  border: 2px solid black;
   border-radius: 1rem;
   flex-direction: column;
   width: max(60vw, 500px);
@@ -40,7 +39,6 @@ button {
 .menu {
   flex: 1;
   display: flex;
-  border: 1px solid blue;
   padding: 1rem;
 }
 
