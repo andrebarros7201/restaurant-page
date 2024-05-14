@@ -1,4 +1,4 @@
-function Menu(title, description, price) {
+function menu(title, description, price) {
   return { title, description, price };
 }
 
@@ -22,12 +22,11 @@ const renderMenu = () => {
     const description =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
     const price = 5.0;
-    menuItems.push(Menu(title, description, price));
+    const menuItem = menu(title, description, price);
+    menuItems.push(menuItem);
   }
 
-  console.log(menuItems);
-
-  //Create menu template
+  //Display menu items
   menuItems.forEach((item) => {
     const menu = document.createElement("div");
     menu.classList.add("menu");
@@ -53,8 +52,13 @@ const renderMenu = () => {
     right.appendChild(description);
     right.appendChild(price);
 
-    menu.appendChild(left);
-    menu.appendChild(right);
+    if (menuItems.indexOf(item) % 2 == 0) {
+      menu.appendChild(left);
+      menu.appendChild(right);
+    } else {
+      menu.appendChild(right);
+      menu.appendChild(left);
+    }
 
     content.appendChild(menu);
   });
