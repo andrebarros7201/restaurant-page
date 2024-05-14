@@ -1,3 +1,7 @@
+function Menu(title, description, price) {
+  return { title, description, price };
+}
+
 const renderMenu = () => {
   const content = document.getElementById("content");
 
@@ -11,9 +15,20 @@ const renderMenu = () => {
   title.textContent = "Menu";
 
   content.appendChild(title);
+  let menuItems = [];
+
+  for (let i = 0; i < 3; i++) {
+    const title = "Lorem Ipsum";
+    const description =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    const price = 5.0;
+    menuItems.push(Menu(title, description, price));
+  }
+
+  console.log(menuItems);
 
   //Create menu template
-  for (let index = 0; index < 3; index++) {
+  menuItems.forEach((item) => {
     const menu = document.createElement("div");
     menu.classList.add("menu");
 
@@ -24,23 +39,25 @@ const renderMenu = () => {
 
     const title = document.createElement("h2");
     title.classList.add("menuTitle");
+    title.textContent = `${item.title}`;
 
     const description = document.createElement("p");
     description.classList.add("description");
+    description.textContent = `${item.description}`;
+
+    const price = document.createElement("p");
+    price.classList.add("price");
+    price.textContent = `Price: ${item.price}$`;
 
     right.appendChild(title);
     right.appendChild(description);
+    right.appendChild(price);
 
-    menu.appendChild(right);
     menu.appendChild(left);
+    menu.appendChild(right);
 
     content.appendChild(menu);
-  }
-
-  let [menu1, menu2, menu3] = document.querySelectorAll(".menu");
-  console.log(menu1);
-  let menu1Title = menu1.querySelector(".right .menuTitle");
-  menu1Title.textContent = "Test";
+  });
 };
 
 export { renderMenu };

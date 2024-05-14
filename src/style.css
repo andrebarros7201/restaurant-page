@@ -3,6 +3,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 header {
@@ -22,11 +23,38 @@ button {
   padding: 8px 12px;
 }
 
+.pageTitle {
+  text-align: center;
+}
+
 #content {
   display: flex;
   border: 2px solid black;
   border-radius: 1rem;
   flex-direction: column;
-  width: 60vw;
+  width: max(60vw, 500px);
   padding: 2rem;
+  gap: 1rem;
+}
+
+.menu {
+  flex: 1;
+  display: flex;
+  border: 1px solid blue;
+  padding: 1rem;
+}
+
+.menu > .right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu > .right > .description {
+  text-align: center;
+}
+
+.menu > .left {
+  flex: 1;
 }
