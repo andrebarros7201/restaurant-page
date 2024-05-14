@@ -1,5 +1,7 @@
 const renderAbout = () => {
   const content = document.getElementById("content");
+
+  //Remove all the content children
   while (content.firstChild) {
     content.removeChild(content.firstChild);
   }
@@ -10,7 +12,17 @@ const renderAbout = () => {
 
   content.appendChild(title);
 
-  //Remove all the content children
+  const header = document.createElement("h2");
+  header.classList.add("pageHeader");
+  header.textContent = "Location";
+
+  content.appendChild(header);
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+  content.appendChild(paragraph);
 };
 
 export { renderAbout };
